@@ -1,0 +1,1 @@
+export const baseApiUrl = `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_API_KEY}`;

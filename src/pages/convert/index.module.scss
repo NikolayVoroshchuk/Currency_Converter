@@ -1,0 +1,13 @@
+.convert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background: url("../../assets/backgroundImg.jpeg") 0 0/ 100% 100% no-repeat;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
