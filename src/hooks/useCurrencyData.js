@@ -11,13 +11,11 @@ const useCurrencyData = () => {
   const [exchangeRate, setExchangeRate] = useState();
   const [amountFrom, setAmountFrom] = useState(1);
   const [amountTo, setAmountTo] = useState(true);
-
   useEffect(() => {
     (async () => {
       const { conversion_rates = 0, base_code = '' } = await request(
-        `${baseApiUrl}/latest/USD`
+        `${baseApiUrl}/latest/USD`,
       );
-
       setCurrencyList(Object.keys(conversion_rates));
       setDefaultCurrencyFrom(base_code);
       setExchangeRate(Object.values(parseFloat(conversion_rates)));
@@ -25,12 +23,11 @@ const useCurrencyData = () => {
     })();
     // eslint-disable-next-line
   }, []);
-
   useEffect(() => {
     (async () => {
       if (defaultCurrencyFrom && defaultCurrencyTo) {
         const { conversion_rate = 0 } = await request(
-          `${baseApiUrl}/pair/${defaultCurrencyFrom}/${defaultCurrencyTo}`
+          `${baseApiUrl}/pair/${defaultCurrencyFrom}/${defaultCurrencyTo}`,
         );
 
         setExchangeRate(conversion_rate);
